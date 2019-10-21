@@ -1,0 +1,178 @@
+//- index.pug
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title AlmoNature
+    meta(name="viewport" content="width=device-width,initial-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="Description" content="Products for dogs")
+    link(href="css/style.min.css" rel="stylesheet")
+    link(href="fonts/Poppins-Regular.woff2" as="font" rel="preload" crossorigin="anonymous")
+    link(href="fonts/Poppins-Medium.woff2" as="font" rel="preload" crossorigin="anonymous")
+    link(href="fonts/Poppins-Bold.woff2" as="font" rel="preload" crossorigin="anonymous")
+
+    script
+      // Picture element HTML5 shiv
+      document.createElement("picture")
+
+  -
+    const headerSocial = [
+      {
+        title: 'Facebook',
+        link: '#'
+      },
+      {
+        title: 'Twitter',
+        link: '#'
+      },
+      {
+        title: 'Instagram',
+        link: '#'
+      },
+    ];
+    
+    const headerCat = [
+      {
+        title: 'Cats',
+        link: '#'
+      },
+      {
+        title: 'Dogs',
+        link: '#'
+      },
+      {
+        title: 'Movement',
+        link: '#'
+      },
+      {
+        title: 'Projects',
+        link: '#'
+      },
+      {
+        title: 'About us',
+        link: '#'
+      },
+    ];
+
+    const benefitsArticles= [
+      {
+        src: 'img/dog-1.png',
+        width: 363,
+        height: 531,
+        title: 'Excellent, gentle diet',
+        desc: 'My Lab looks great on this food, she\'s shiny, happy, energetic but not hyper and her digestion and what comes out at the other end have never been better.',
+        name: 'Em,',
+        profession: 'Zooplus review'
+      },
+      {
+        src: 'img/dog-2.png',
+        width: 488,
+        height: 342,
+        title: 'Good Organic Ingredients = Glossy Coat, Happy Dog',
+        desc: 'Smeegle loves this and it really is the only food that makes his coat glossy and gives him supreme health. We used to get it in a local shop and when that closed down we tried other \'premium\' food but they just didn\'t come close at all, making his coat dull and his energy go.',
+        name: 'Ness,',
+        profession: 'Zooplus review'
+      },
+      {
+        src: 'img/dog-3.png',
+        width: 800,
+        height: 531,
+        title: 'Excellent food for sensitive dogs',
+        desc: 'Our German Shepherd loves this food - we had real problems finding a suitable dried food for him, everything we tried flared up either his dermatitis or digestive problems. This is very well tolerated, and he wolfs it down!',
+        name: 'Gemma,',
+        profession: 'Zooplus review'
+      },
+      {
+        src: 'img/dog-4.png',
+        width: 347,
+        height: 624,
+        title: 'Best food so far',
+        desc: 'Shiny coat, healthy dog, he loves this food! Tried other food but this is the best most balanced and natural and not even the most expensive',
+        name: 'Erica,',
+        profession: 'Zooplus review'
+      },
+    ];
+
+  body
+
+    header.header.text-content
+      .site-wrapper
+        .header__wrapper.header__wrapper--first
+
+          //- Social
+          .header__social
+
+            ul.header__social-list
+              each item in headerSocial
+                li.header__social-item
+                  span= item.title
+                  a(href=item.link)
+
+          //- Settings
+          .header__settings
+
+            p Professional area
+            a.header__settings-link.header__settings-link--store(href="#") Find a store
+            a(href="#") Italy
+            a.header__settings-link.header__settings-link--lang(href="#") EN
+
+        //- Navigation
+        .header__wrapper.header__wrapper--second
+          nav.header__main-navigation
+
+            img.header__logo(src="img/svg/Almo.svg" width="123" height="53" alt="Logo Almo Nature")
+
+            ul.header__category-list
+              each item in headerCat
+                li.header__category-item
+                  a(href=item.link)= item.title
+
+    //- Introduction
+    section.introduction.text-content
+      .site-wrapper
+        h1 Almo Nature shop
+
+        .introduction__wrapper
+        
+          img.introduction__logo(src="img/svg/holistic.svg" width="264" height="70" alt="Logo Holistic")
+          span Total care is easy
+          p 
+            | Holistic composition, considering all pets’ nutritional needs
+            | with 
+            span fresh meat as a #1 component
+          p 
+            | Giving your dog a full measure of care it deserves never 
+            | was that easy
+
+        img.introduction__image(src="img/intro-image.png" width="403" height="452" alt="Good of Almo Nature")
+
+    //- Benefits
+    section.benefits.text-content
+      .site-wrapper
+        h2 What benefits do the careful owners see?
+
+        ul.benefits__list
+          each item in benefitsArticles
+            li.benefits__item
+              article.benefits__article
+
+                h3= item.title
+                p= item.desc
+
+                ul.benefits__rating-list
+                  each index in [1, 2, 3, 4, 5]
+                    li.benefits__rating-item 
+                      span Star of the rating
+
+                p= item.name
+                  span= item.profession
+
+              img.benefits__image(src= item.src width= item.width height= item.height alt="The dog")
+
+
+
+
+
+    script(src='js/all.js')
