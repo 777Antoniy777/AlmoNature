@@ -1,0 +1,45 @@
+.virtues {
+  min-height: 440px;
+  padding: 133px 40px 14px;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 500;
+  background-image: url("../img/virtues-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: $b;
+  color: $w;
+}
+
+.virtues h2,
+.virtues p {
+  width: 920px;
+  margin: 0 auto;
+  padding-left: 80px;
+}
+
+.virtues h2 {
+  position: relative;
+  padding-bottom: 22px;
+  font-size: 36px;
+  line-height: 43px;
+  font-weight: 700;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -66px;
+    width: 96px;
+    height: 93px;
+    background-image: url("../img/svg/sign-icon.svg");
+  }
+}
+
+.virtues p {
+  padding-bottom: 15px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}

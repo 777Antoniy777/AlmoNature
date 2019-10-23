@@ -1,0 +1,40 @@
+.footer {
+  min-height: 424px;
+  padding: 34px 40px 14px;
+  font-size: 13px;
+  line-height: 19px;
+  color: $header-cr;
+  background-color: $w;
+}
+
+.footer__logo-wrapper,
+.footer__link-wrapper {
+  width: 1045px;
+  margin: 0 auto;
+}
+
+.footer__logo-list {
+  @include reset-list;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 42px;
+}
+
+.footer__logo-item {
+  margin-right: 43px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.footer__link-wrapper h3 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: $footer-title-cr;
+}
+
+.footer__link-list {
+  @include reset-list;
+}

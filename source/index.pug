@@ -95,6 +95,63 @@ html(lang="en")
       },
     ];
 
+    const footerLists = {
+      products: [
+        {
+          title: 'Cat products',
+          link: '#'
+        },
+        {
+          title: 'Dog products',
+          link: '#'
+        },
+        {
+          title: 'Find a store',
+          link: '#'
+        },
+        {
+          title: 'Quality',
+          link: '#'
+        },
+      ],
+      movement: [
+        {
+          title: 'A new pact with animals',
+          link: '#'
+        },
+        {
+          title: 'Ecosystem as a goal',
+          link: '#'
+        },
+        {
+          title: 'Pet food as a fuel',
+          link: '#'
+        },
+        {
+          title: 'How you can help',
+          link: '#'
+        },
+      ],
+      projects: [
+        {
+          title: 'A Companion Animal Is For Life',
+          link: '#'
+        },
+        {
+          title: 'Farmers & Predators',
+          link: '#'
+        },
+        {
+          title: 'Dog Blood Bank',
+          link: '#'
+        },
+        {
+          title: 'Regenerating Villa Fortuna',
+          link: '#'
+        },
+      ],
+    };
+
   body
 
     header.header.text-content
@@ -122,54 +179,192 @@ html(lang="en")
         .header__wrapper.header__wrapper--second
           nav.header__main-navigation
 
-            img.header__logo(src="img/svg/Almo.svg" width="123" height="53" alt="Logo Almo Nature")
+            img.header__logo(src="img/svg/almonature.svg" width="123" height="53" alt="Logo Almo Nature")
 
             ul.header__category-list
               each item in headerCat
                 li.header__category-item
                   a(href=item.link)= item.title
 
-    //- Introduction
-    section.introduction.text-content
-      .site-wrapper
-        h1 Almo Nature shop
+    //- Main
+    main
 
-        .introduction__wrapper
-        
-          img.introduction__logo(src="img/svg/holistic.svg" width="264" height="70" alt="Logo Holistic")
-          span Total care is easy
+      //- Introduction
+      section.introduction.text-content
+        .site-wrapper
+          h1 Almo Nature shop
+
+          .introduction__wrapper
+          
+            img.introduction__logo(src="img/svg/holistic.svg" width="264" height="70" alt="Logo Holistic")
+            span Total care is easy
+            p 
+              | Holistic composition, considering all pets’ nutritional needs
+              | with 
+              span fresh meat as a #1 component
+            p 
+              | Giving your dog a full measure of care it deserves never 
+              | was that easy
+
+          img.introduction__image(src="img/intro-image.png" width="403" height="452" alt="Good of Almo Nature")
+
+      //- Benefits
+      section.benefits.text-content
+        .site-wrapper
+          h2 What benefits do the careful owners see?
+
+          ul.benefits__list
+            each item in benefitsArticles
+              li.benefits__item
+                article.benefits__article
+
+                  h3= item.title
+                  p= item.desc
+
+                  ul.benefits__rating-list
+                    each index in [1, 2, 3, 4, 5]
+                      li.benefits__rating-item 
+                        span Star of the rating
+
+                  p= item.name
+                    span= item.profession
+
+                img.benefits__image(src= item.src width= item.width height= item.height alt="The dog")
+
+      //- Review
+      section.review.text-content
+        .site-wrapper
+          h2 What are the reasons behind that?
+
+          .review__wrapper
+
+            article.review__article
+              h3 A holistic approach to dog’s requirements
+              p 
+                | All the systems in your pet’s body are not functioning separately – they are 
+                | interlinked and perform as the complex system. To maintain order in this
+                | system and support its proper functioning, you have to think of it as a whole, 
+                | considering all its needs. That is exactly what we do when create our Holistic 
+                |rations for dogs’ nutrition.
+              p Benedetta Giannini, 
+                span Veterinarian and Nutritional expert
+
+            .review__image-wrapper
+              img.review__image(src="img/review-image.png" width="235" height="206" alt="Benedetta Giannini")
+
+      //- Features
+      section.features.text-content
+        .site-wrapper
+          h2 Our features
+
+          .features__wrapper
+            span Complete nutrition
+            span Great taste of&nbsp;fresh&nbsp;meat
+
+          ul.features__list
+
+            li.features__item.features__item--first
+              h3 High percentage of fresh meat
+              p 
+                | Each of Almo Nature holistic kibble contains up to 26% fresh
+                | meat, that makes it highly digestible and extremely tasty
+
+            li.features__item.features__item--second
+              h3 Taking care of specific needs
+              p 
+                | Holistic range offers also a grain free option, that is especially 
+                | recommended for dogs and those who are prone to obesity
+
+      //- Products
+      section.products.text-content
+        .site-wrapper
+          h2 Why will Almo Holistic fit needs of your particular dog?
           p 
-            | Holistic composition, considering all pets’ nutritional needs
-            | with 
-            span fresh meat as a #1 component
+            | Almo Holistic offers different options for dogs of all sizes, with customized 
+            | kibble size and elements’ ratio, based on metabolic specifics:
+
+          ul.products__list
+
+            li.products__item
+              a(href="#")
+                h3 Breed size For&nbsp;puppy
+                img(src="img/product-2.png" width="289" height="364" alt="Breed size For puppy")
+
+            li.products__item
+              a(href="#")
+                h3 Size of the kibble Small (S)
+                img(src="img/product-1.png" width="289" height="364" alt="Size of the kibble Small (S)")
+
+            li.products__item
+              a(href="#")
+                h3 Size of the kibble Medium (M)
+                img(src="img/product-3.png" width="289" height="364" alt="Size of the kibble Medium (M)")
+
+            li.products__item
+              a(href="#")
+                h3 Size of the kibble Large (L)
+                img(src="img/product-4.png" width="289" height="364" alt="Size of the kibble Large (L)")
+
+          p
+            | And above all - it is convenient to buy and store, 
+            | available in 
+            span 400g, 2kg 
+            | and 
+            span 12kg sizes
+
+        //- Virtues
+      section.virtues.text-content
+        .site-wrapper
+          h2 Pet food as a fuel for pro-nature projects
           p 
-            | Giving your dog a full measure of care it deserves never 
-            | was that easy
+            | 100% of AlmoNature's profits are used to help animals through different projects of 
+            | Fondazione Capellino, with no chance of reverse action and no strings attached.
 
-        img.introduction__image(src="img/intro-image.png" width="403" height="452" alt="Good of Almo Nature")
+          p When you buy Almo Nature products, you become a part of it.
 
-    //- Benefits
-    section.benefits.text-content
+    footer.footer.text-content
       .site-wrapper
-        h2 What benefits do the careful owners see?
 
-        ul.benefits__list
-          each item in benefitsArticles
-            li.benefits__item
-              article.benefits__article
+        .footer__logo-wrapper
+          ul.footer__logo-list
 
-                h3= item.title
-                p= item.desc
+            li.footer__logo-item
+              img(src="img/svg/almonature.svg" width="121" height="54" alt="Logo Almo Nature")
 
-                ul.benefits__rating-list
-                  each index in [1, 2, 3, 4, 5]
-                    li.benefits__rating-item 
-                      span Star of the rating
+            li.footer__logo-item
+              img(src="img/svg/fondazion.svg" width="161" height="35" alt="Logo Fondazione")
 
-                p= item.name
-                  span= item.profession
+        .footer__link-wrapper
 
-              img.benefits__image(src= item.src width= item.width height= item.height alt="The dog")
+          .footer__link-wrapper.footer__link-wrapper--products
+            h3 Products
+
+            ul.footer__link-list.footer__link-list
+              each item in footerLists.products
+                li.footer__link-item
+                  a(href=item.link)= item.title
+
+          .footer__link-wrapper.footer__link-wrapper--movement
+            h3 Movement
+
+            ul.footer__link-list.footer__link-list
+              each item in footerLists.movement
+                li.footer__link-item
+                  a(href=item.link)= item.title
+
+          .footer__link-wrapper.footer__link-wrapper--projects
+            h3 Projects
+
+            ul.footer__link-list.footer__link-list
+              each item in footerLists.projects
+                li.footer__link-item
+                  a(href=item.link)= item.title
+
+
+          
+            
+
+
 
 
 
