@@ -7,14 +7,68 @@
   background-color: $w;
 }
 
-.footer__logo-wrapper,
-.footer__link-wrapper {
+.footer__logo-list,
+.footer__link-list,
+.footer__link-sublist,
+.footer__social-list {
+  @include reset-list;
+}
+
+.footer__logo-list,
+.footer__link-list {
   width: 1045px;
   margin: 0 auto;
 }
 
+.footer__link-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__link-item {
+  &--products,
+  &--movement,
+  &--projects,
+  &--about,
+  &--touch {
+    flex-direction: column;
+    width: 150px;
+    margin: 0;
+  }
+}
+
+.footer__link-item--products {
+  width: 100px;
+  margin-right: 66px;
+}
+
+.footer__link-item--movement,
+.footer__link-item--projects,
+.footer__link-item--about {
+  width: 199px;
+}
+
+.footer__link-item--movement {
+  margin-right: 36px;
+}
+
+.footer__link-item--projects {
+  margin-right: 65px;
+}
+
+.footer__link-item--about {
+  margin-right: 21px;
+}
+
+.footer__link-item--touch {
+  width: 160px;
+}
+
+.footer__link-list li:last-child {
+  margin-right: 0;
+}
+
 .footer__logo-list {
-  @include reset-list;
   display: flex;
   align-items: baseline;
   margin-bottom: 42px;
@@ -22,19 +76,75 @@
 
 .footer__logo-item {
   margin-right: 43px;
+  transition: opacity 0.3s;
 
   &:last-child {
     margin-right: 0;
   }
+
+  // hover
+  &:hover {
+    opacity: 0.7;
+  }
+
+  // active
+  &:active {
+    opacity: 0.5;
+  }
 }
 
-.footer__link-wrapper h3 {
+.footer__link-item h3 {
+  padding-bottom: 16px;
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
   color: $footer-title-cr;
 }
 
-.footer__link-list {
-  @include reset-list;
+.footer__link-subitem {
+  margin-bottom: 17px;
+}
+
+.footer__link-subitem a {
+  transition: color 0.3s;
+}
+
+// :hover
+.footer__link-subitem:hover a {
+  color: orange;
+}
+
+// :active
+.footer__link-subitem:active a {
+  color: rgba(orange, 0.7);
+}
+
+.footer__social-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 23px;
+  margin-bottom: 21px;
+}
+
+.footer___social-item {
+  margin-right: 14px;
+  transition: opacity 0.3s;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  // :hover
+  &:hover {
+    opacity: 0.7;
+  }
+
+  // :active
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.footer___social-item span {
+  @include visually-hidden;
 }

@@ -52,12 +52,12 @@
   }
 }
 
-.benefits__article {
+.benefits__wrapper {
   min-width: 581px;
   width: 594px;
 }
 
-.benefits__article h3 {
+.benefits__wrapper h3 {
   width: 90%;
   padding-bottom: 5px;
   font-size: 28px;
@@ -66,7 +66,7 @@
   color: $benefits-title-cr;
 }
 
-.benefits__article p {
+.benefits__wrapper p {
   padding-bottom: 28px;
   font-size: 20px;
   line-height: 36px;
@@ -79,7 +79,7 @@
   }
 }
 
-.benefits__article p:last-child span {
+.benefits__wrapper p:last-child span {
   font-weight: 500;
   padding-left: 6px;
 }
@@ -94,7 +94,6 @@
   width: 25px;
   height: 25px;
   margin-right: 12px;
-  background-image: url("../img/svg/star.svg");
 
   &:last-child {
     margin-right: 0;
