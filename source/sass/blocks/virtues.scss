@@ -9,6 +9,11 @@
   background-repeat: no-repeat;
   background-color: $b;
   color: $w;
+
+  @media (max-width: $media-dt) {
+    padding: 42px 24px 73px;
+    background-image: url("../img/virtues-tb-bg.jpg");
+  }
 }
 
 .virtues h2,
@@ -16,6 +21,12 @@
   width: 920px;
   margin: 0 auto;
   padding-left: 80px;
+
+  @media (max-width: $media-dt) {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+  }
 }
 
 .virtues h2 {
@@ -25,6 +36,11 @@
   line-height: 43px;
   font-weight: 700;
 
+  @media (max-width: $media-dt) {
+    padding-top: 120px;
+    padding-bottom: 15px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -33,6 +49,12 @@
     width: 96px;
     height: 93px;
     background-image: url("../img/svg/sign-icon.svg");
+
+    @media (max-width: $media-dt) {
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
 

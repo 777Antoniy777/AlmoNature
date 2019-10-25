@@ -11,6 +11,11 @@
   background-position: 0 0;
   background-repeat: no-repeat;
   background-color: $b;
+
+  @media (max-width: $media-dt) {
+    min-height: 1161px;
+    padding: 87px 0 63px;
+  }
 }
 
 .features h2 {
@@ -26,6 +31,10 @@
   margin: 0 auto;
   margin-bottom: -16px;
 
+  @media (max-width: $media-dt) {
+    margin-bottom: 14px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -34,6 +43,10 @@
     width: 48px;
     height: 48px;
     background-image: url("../img/svg/plus.icon.svg");
+
+    @media (max-width: $media-dt) {
+      right: 54%;
+    }
   }
 }
 
@@ -48,12 +61,21 @@
   text-align: center;
   text-transform: lowercase;
 
+  @media (max-width: $media-dt) {
+    padding: 159px 75px 0 0;
+  }
+
   &::before {
     content: "";
     position: absolute;
     top: 9px;
     left: 53%;
     transform: translateX(-50%);
+
+    @media (max-width: $media-dt) {
+      top: 10px;
+      left: 37%;
+    }
   }
 }
 
@@ -72,6 +94,13 @@
     width: 156px;
     height: 129px;
     background-image: url("../img/features2-icon.png");
+
+    @media (max-width: $media-dt) {
+      top: 12px;
+      left: 33%;
+      width: 176px;
+      height: 129px;
+    }
   }
 }
 
@@ -84,6 +113,16 @@
                     url("../../img/feature-cloud-icon.png");
   background-position: center 0, center 132%, 72.5% 35%;
   background-repeat: no-repeat, repeat-x, no-repeat;
+
+  @media (max-width: $media-dt) {
+    height: 591px;
+    margin-bottom: -39px;
+    background-image: url("../img/features-image-bg.png"),
+                      none,
+                      url("../../img/feature-cloud-icon.png");
+    background-size: cover, 0 0, 29% 24%;
+    background-position: center 41px, center, 81% 19%;
+  }
 }
 
 .features__list {
@@ -91,18 +130,29 @@
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  max-width: 1445px;
-  width: 1118px;
+  max-width: 1118px;
+  width: 100%;
   margin: 0 auto;
   padding-left: 10px;
+
+  @media (max-width: $media-dt) {
+    padding-left: 24px;
+  }
 }
 
 .features__item {
   position: relative;
-  width: 514px;
+  width: 46.5%;
   margin-right: 28px;
   margin-bottom: 80px;
   padding-left: 27px;
+
+  @media (max-width: $media-dt) {
+    width: 49%;
+    margin-right: 7px;
+    margin-bottom: 40px;
+    padding-left: 0;
+  }
 
   &:nth-child(even) {
     margin-right: 0;
@@ -115,6 +165,10 @@
     left: 25px;
     width: 64px;
     height: 64px;
+
+    @media (max-width: $media-dt) {
+      left: 2px;
+    }
   }
 
   &--first::before {
@@ -131,4 +185,15 @@
   font-size: 28px;
   line-height: 38px;
   font-weight: 700;
+
+  @media (max-width: $media-dt) {
+    width: 95%;
+    padding-bottom: 9px;
+  }
+}
+
+.features__item p {
+  @media (max-width: $media-dt) {
+    width: 95.5%;
+  }
 }

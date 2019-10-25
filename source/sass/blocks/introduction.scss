@@ -24,7 +24,7 @@
 
 .introduction .site-wrapper {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 480px;
   grid-template-areas:
     "title img"
@@ -46,9 +46,11 @@
 
 .introduction__image-wrapper {
   grid-area: title;
+  margin-bottom: 54px;
   padding-left: 160px;
 
   @media (max-width: $media-dt) {
+    margin-bottom: 0;
     padding-left: 0;
   }
 }
