@@ -20,11 +20,18 @@
     background-size: 100% 70px, 
                      100% 100%;
   }
+
+  @media (max-width: $media-tb) {
+    padding: 41px 14px 16px;
+    font-size: 18px;
+    line-height: 27px;
+    background-size: 100% 19px, 
+                     100% 100%;
+  }
 }
 
 .introduction .site-wrapper {
   display: grid;
-  // grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 480px;
   grid-template-areas:
     "title img"
@@ -37,6 +44,15 @@
     grid-template-areas:
       "title title"
       "desc img";
+  }
+
+  @media (max-width: $media-tb) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 0;
+    grid-template-areas:
+      "title title"
+      "desc desc"
+      "img img";
   }
 }
 
@@ -53,16 +69,36 @@
     margin-bottom: 0;
     padding-left: 0;
   }
+
+  @media (max-width: $media-tb) {
+    width: 80%;
+    min-height: 143px;
+    margin-bottom: 16px;
+  }
 }
 
 .introduction__image-wrapper span {
   font-size: 80px;
   line-height: 84px;
   font-weight: 700;
+
+  @media (max-width: $media-tb) {
+    font-size: 40px;
+    line-height: 42px;
+  }
 }
 
 .introduction__logo {
   margin-bottom: 36px;
+
+  @media (max-width: $media-tb) {
+    width: 131px;
+    height: 35px;
+  }
+
+  @media (max-width: $media-tb) {
+    margin-bottom: 24px;
+  }
 }
 
 .introduction__image {
@@ -75,6 +111,12 @@
     left: -52px;
     width: 335px;
     height: 376px;
+  }
+
+  @media (max-width: $media-tb) {
+    left: 4px;
+    width: 243px;
+    height: 272px;
   }
 }
 
@@ -89,6 +131,12 @@
     padding-bottom: 0;
     padding-left: 4px;
   }
+
+  @media (max-width: $media-tb) {
+    min-height: 203px;
+    margin-bottom: 15px;
+    padding-left: 0;
+  }
 }
 
 .introduction__content-wrapper p {
@@ -102,6 +150,10 @@
   @media (max-width: $media-dt) {
     width: 89%;
   }
+
+  @media (max-width: $media-tb) {
+    width: 100%;
+  }
 }
 
 .introduction__content-wrapper p span {
@@ -113,6 +165,11 @@
   line-height: 36px;
   font-weight: 500;
 
+  @media (max-width: $media-tb) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -122,6 +179,11 @@
     width: 100%;
     height: 17px;
     background-image: url("../img/svg/line.svg");
+    background-repeat: round;
     transform: rotate(-0.1deg);
+
+    @media (max-width: $media-tb) {
+      width: 97%;
+    }
   }
 }

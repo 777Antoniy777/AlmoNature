@@ -70,7 +70,7 @@ gulp.task("webp", function() {
     .pipe(gulp.dest("build/img"));
 });
 
-gulp.task("sprite", () => {
+gulp.task("sprite", function() {
   return gulp
     .src("build/img/icons-sprite/*.svg")
     .pipe(svgsprite({

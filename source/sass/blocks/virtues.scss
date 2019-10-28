@@ -14,6 +14,49 @@
     padding: 42px 24px 73px;
     background-image: url("../img/virtues-tb-bg.jpg");
   }
+
+  @media (max-width: $media-tb) {
+    padding: 18px 14px 33px;
+    font-size: 18px;
+    line-height: 27px;
+    background-position: center;
+  }
+}
+
+.virtues .site-wrapper {
+  position: relative;
+  max-width: 1054px;
+  padding-top: 0;
+
+  @media (max-width: $media-dt) {
+    padding-top: 121px;
+  }
+
+  @media (max-width: $media-tb) {
+    padding-top: 108px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 0;
+    width: 96px;
+    height: 93px;
+    background-image: url("../img/svg/sign-icon.svg");
+
+    @media (max-width: $media-dt) {
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: $media-tb) {
+      width: 84px;
+      height: 82px;
+      background-size: 84px 82px;
+    }
+  }
 }
 
 .virtues h2,
@@ -30,31 +73,19 @@
 }
 
 .virtues h2 {
-  position: relative;
   padding-bottom: 22px;
   font-size: 36px;
   line-height: 43px;
   font-weight: 700;
 
   @media (max-width: $media-dt) {
-    padding-top: 120px;
     padding-bottom: 15px;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: -66px;
-    width: 96px;
-    height: 93px;
-    background-image: url("../img/svg/sign-icon.svg");
-
-    @media (max-width: $media-dt) {
-      top: 9px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  @media (max-width: $media-tb) {
+    padding-bottom: 8px;
+    font-size: 24px;
+    line-height: 25px;
   }
 }
 

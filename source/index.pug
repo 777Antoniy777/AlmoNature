@@ -167,8 +167,13 @@ html(lang="en")
         .header__wrapper.header__wrapper--second
           nav.header__main-navigation
 
-            a(href="#")
-              img.header__logo(src="img/svg/almonature.svg" width="123" height="53" alt="Logo Almo Nature")
+            .header__logo-wrapper
+              a(href="#")
+                img.header__logo(src="img/svg/almonature.svg" width="123" height="53" alt="Logo Almo Nature")
+
+              button.header__menu-button(type="button" aria-label="Site menu")
+                svg(width="20" height="16")
+                  use(xlink:href="img/sprite/sprite.svg#burger-icon")
 
             ul.header__category-list
               each item in headerCat
@@ -472,11 +477,11 @@ html(lang="en")
         //- .footer__logo-wrapper
         ul.footer__logo-list
 
-          li.footer__logo-item
+          li.footer__logo-item.footer__logo-item--first
             a(href="#")
               img(src="img/svg/almonature.svg" width="121" height="54" alt="Logo Almo Nature")
 
-          li.footer__logo-item
+          li.footer__logo-item.footer__logo-item--second
             a(href="#")
               img(src="img/svg/fondazion.svg" width="161" height="35" alt="Logo Fondazione")
 
@@ -486,7 +491,7 @@ html(lang="en")
           li.footer__link-item.footer__link-item--products
             h3 Products
 
-            ul.footer__link-sublist
+            ul.footer__link-sublist.no-js
               each item in footerLists.products
                 li.footer__link-subitem
                   a(href=item.link)= item.title
@@ -494,7 +499,7 @@ html(lang="en")
           li.footer__link-item.footer__link-item--movement
             h3 Movement
 
-            ul.footer__link-sublist
+            ul.footer__link-sublist.no-js
               each item in footerLists.movement
                 li.footer__link-subitem
                   a(href=item.link)= item.title
@@ -502,15 +507,16 @@ html(lang="en")
           li.footer__link-item.footer__link-item--projects
             h3 Projects
 
-            ul.footer__link-sublist
+            ul.footer__link-sublist.no-js
               each item in footerLists.projects
                 li.footer__link-subitem
                   a(href=item.link)= item.title
 
           li.footer__link-item.footer__link-item--about
-            h3 About us
+            .footer__link-item
+              h3 About us
 
-            ul.footer__link-sublist
+            ul.footer__link-sublist.no-js
               each item in footerLists.about
                 li.footer__link-subitem
                   a(href=item.link)= item.title
@@ -518,7 +524,7 @@ html(lang="en")
           li.footer__link-item.footer__link-item--touch
             h3 Get in touch
 
-            ul.footer__link-sublist
+            ul.footer__link-sublist.no-js
 
               li.footer__link-subitem
                 a(href="#") Contact us
@@ -529,7 +535,7 @@ html(lang="en")
                   li.footer___social-item
                     a(href="#")
                       span Facebook
-                      svg(width="44" height="42")
+                      svg(width="44" height="44")
                         use(xlink:href="img/sprite/sprite.svg#footer-fb")
 
                   li.footer___social-item

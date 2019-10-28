@@ -16,6 +16,13 @@
     min-height: 1161px;
     padding: 87px 0 63px;
   }
+
+  @media (max-width: $media-tb) {
+    min-height: 1161px;
+    padding: 87px 0 78px;
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 
 .features h2 {
@@ -35,6 +42,12 @@
     margin-bottom: 14px;
   }
 
+  @media (max-width: $media-tb) {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -46,6 +59,11 @@
 
     @media (max-width: $media-dt) {
       right: 54%;
+    }
+
+    @media (max-width: $media-tb) {
+      top: 47%;
+      right: 45%;
     }
   }
 }
@@ -65,6 +83,13 @@
     padding: 159px 75px 0 0;
   }
 
+  @media (max-width: $media-tb) {
+    padding: 0;
+    padding-top: 110px;
+    font-size: 24px;
+    line-height: 25px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -80,10 +105,22 @@
 }
 
 .features__wrapper span:nth-child(1) {
+  @media (max-width: $media-tb) {
+    padding-bottom: 80px;
+  }
+
   &::before {
     width: 129px;
     height: 126px;
     background-image: url("../img/svg/features1-icon.svg");
+
+    @media (max-width: $media-tb) {
+      top: -3px;
+      left: 47%;
+      width: 100px;
+      height: 98px;
+      background-size: 100px 98px;
+    }
   }
 }
 
@@ -101,6 +138,14 @@
       width: 176px;
       height: 129px;
     }
+
+    @media (max-width: $media-tb) {
+      top: 4px;
+      left: 49%;
+      width: 129px;
+      height: 100px;
+      background-size: 128px 113px;
+    }
   }
 }
 
@@ -110,7 +155,7 @@
   margin-bottom: 138px;
   background-image: url("../img/features-image-bg.png"),
                     url("../img/table-bg.png"),
-                    url("../../img/feature-cloud-icon.png");
+                    url("../img/feature-cloud-icon.png");
   background-position: center 0, center 132%, 72.5% 35%;
   background-repeat: no-repeat, repeat-x, no-repeat;
 
@@ -119,9 +164,19 @@
     margin-bottom: -39px;
     background-image: url("../img/features-image-bg.png"),
                       none,
-                      url("../../img/feature-cloud-icon.png");
+                      url("../img/feature-cloud-icon.png");
     background-size: cover, 0 0, 29% 24%;
     background-position: center 41px, center, 81% 19%;
+  }
+
+  @media (max-width: $media-tb) {
+    height: 279px;
+    margin-bottom: -25px;
+    background-image: url("../img/features-image-bg.png"),
+                      none,
+                      url("../img/feature-cloud-icon.png");
+    background-size: cover, 0 0, 54% 38%;
+    background-position: 45% 41px, center, 99% 19%;
   }
 }
 
@@ -137,6 +192,11 @@
 
   @media (max-width: $media-dt) {
     padding-left: 24px;
+  }
+
+  @media (max-width: $media-tb) {
+    padding-right: 14px;
+    padding-left: 14px;
   }
 }
 
@@ -154,6 +214,13 @@
     padding-left: 0;
   }
 
+  @media (max-width: $media-tb) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 26px;
+    padding-top: 80px;
+  }
+
   &:nth-child(even) {
     margin-right: 0;
   }
@@ -168,6 +235,10 @@
 
     @media (max-width: $media-dt) {
       left: 2px;
+    }
+
+    @media (max-width: $media-tb) {
+      top: 7px;
     }
   }
 
@@ -190,10 +261,20 @@
     width: 95%;
     padding-bottom: 9px;
   }
+
+  @media (max-width: $media-tb) {
+    padding-bottom: 4px;
+    font-size: 20px;
+    line-height: 27px;
+  }
 }
 
 .features__item p {
   @media (max-width: $media-dt) {
     width: 95.5%;
+  }
+
+  @media (max-width: $media-tb) {
+    width: 100%;
   }
 }
