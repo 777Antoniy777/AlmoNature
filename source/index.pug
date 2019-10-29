@@ -18,7 +18,6 @@ html(lang="en")
       document.createElement("picture")
 
   -
-    
     const headerCat = [
       {
         title: 'Cats',
@@ -129,8 +128,8 @@ html(lang="en")
 
     //- Header
     header.header.text-content
-      .site-wrapper
-        .header__wrapper.header__wrapper--first
+      .header__wrapper.header__wrapper--first
+        .site-wrapper
 
           //- Social
           .header__social
@@ -163,8 +162,10 @@ html(lang="en")
             a.header__settings-link.header__settings-link--country(href="#") Italy
             a.header__settings-link.header__settings-link--lang(href="#") EN
 
-        //- Navigation
-        .header__wrapper.header__wrapper--second
+      //- Navigation
+      .header__wrapper.header__wrapper--second
+        .site-wrapper
+        
           nav.header__main-navigation
 
             .header__logo-wrapper
@@ -193,7 +194,7 @@ html(lang="en")
             img.introduction__logo(src="img/svg/holistic.svg" width="264" height="70" alt="Logo Holistic")
             span Total care is easy
 
-          img.introduction__image(src="img/intro-image.png" width="403" height="452" alt="Good of Almo Nature")
+          img.introduction__image(src="img/intro-image.png" width="403" height="452" loading="lazy" alt="Good of Almo Nature")
 
           .introduction__content-wrapper
             p
@@ -250,7 +251,7 @@ html(lang="en")
                 p Em,
                   span Zooplus review
 
-              img.benefits__image(src="img/dog-1.png" width="363" height="531" alt="The dog")
+              img.benefits__image(src="img/dog-1.png" width="363" height="531" loading="lazy" alt="The dog")
 
             li.benefits__item.benefits__item--second
               .benefits__wrapper
@@ -293,7 +294,7 @@ html(lang="en")
                 p Ness,
                   span Zooplus review
 
-              img.benefits__image(src="img/dog-2.png" width="488" height="342" alt="The dog")
+              img.benefits__image(src="img/dog-2.png" width="488" height="342" loading="lazy" alt="The dog")
 
             li.benefits__item.benefits__item--third
                 .benefits__wrapper
@@ -335,7 +336,7 @@ html(lang="en")
                   p Gemma,
                     span Zooplus review
 
-                img.benefits__image(src="img/dog-3.png" width="800" height="531" alt="The dog")
+                img.benefits__image(src="img/dog-3.png" width="800" height="531" loading="lazy" alt="The dog")
 
             li.benefits__item.benefits__item--forth
                 .benefits__wrapper
@@ -376,7 +377,7 @@ html(lang="en")
                   p Erica,
                     span Zooplus review
 
-                img.benefits__image(src="img/dog-4.png" width="347" height="624" alt="The dog")
+                img.benefits__image(src="img/dog-4.png" width="347" height="624" loading="lazy" alt="The dog")
 
       //- Review
       section.review.text-content
@@ -397,7 +398,7 @@ html(lang="en")
                 span Veterinarian and Nutritional expert
 
             .review__image-wrapper
-              img.review__image(src="img/review-image.png" width="235" height="206" alt="Benedetta Giannini")
+              img.review__image(src="img/review-image.png" width="235" height="206" loading="lazy" alt="Benedetta Giannini")
 
       //- Features
       section.features.text-content
@@ -436,22 +437,31 @@ html(lang="en")
             li.products__item
               a(href="#")
                 h3 Breed size For&nbsp;puppy
-                img(src="img/product-2.png" width="289" height="364" alt="Breed size For puppy")
+                img(src="img/product-2.png" width="289" height="364" loading="lazy" alt="Breed size For puppy")
 
             li.products__item
               a(href="#")
                 h3 Size of the kibble Small (S)
-                img(src="img/product-1.png" width="289" height="364" alt="Size of the kibble Small (S)")
+                img(src="img/product-1.png" width="289" height="364" loading="lazy" alt="Size of the kibble Small (S)")
 
             li.products__item
               a(href="#")
                 h3 Size of the kibble Medium (M)
-                img(src="img/product-3.png" width="289" height="364" alt="Size of the kibble Medium (M)")
+                img(src="img/product-3.png" width="289" height="364" loading="lazy" alt="Size of the kibble Medium (M)")
 
             li.products__item
               a(href="#")
                 h3 Size of the kibble Large (L)
-                img(src="img/product-4.png" width="289" height="364" alt="Size of the kibble Large (L)")
+                img(src="img/product-4.png" width="289" height="364" loading="lazy" alt="Size of the kibble Large (L)")
+            li.products__item
+              a(href="#")
+                h3 Size of the kibble Medium (M)
+                img(src="img/product-3.png" width="289" height="364" loading="lazy" alt="Size of the kibble Medium (M)")
+
+            li.products__item
+              a(href="#")
+                h3 Size of the kibble Large (L)
+                img(src="img/product-4.png" width="289" height="364" loading="lazy" alt="Size of the kibble Large (L)")
 
           p
             | And above all - it is convenient to buy and store, 
@@ -489,7 +499,8 @@ html(lang="en")
         ul.footer__link-list
 
           li.footer__link-item.footer__link-item--products
-            h3 Products
+            .footer__wrapper-title
+              h3 Products
 
             ul.footer__link-sublist.no-js
               each item in footerLists.products
@@ -497,7 +508,8 @@ html(lang="en")
                   a(href=item.link)= item.title
 
           li.footer__link-item.footer__link-item--movement
-            h3 Movement
+            .footer__wrapper-title
+              h3 Movement
 
             ul.footer__link-sublist.no-js
               each item in footerLists.movement
@@ -505,7 +517,8 @@ html(lang="en")
                   a(href=item.link)= item.title
 
           li.footer__link-item.footer__link-item--projects
-            h3 Projects
+            .footer__wrapper-title
+              h3 Projects
 
             ul.footer__link-sublist.no-js
               each item in footerLists.projects
@@ -513,7 +526,7 @@ html(lang="en")
                   a(href=item.link)= item.title
 
           li.footer__link-item.footer__link-item--about
-            .footer__link-item
+            .footer__wrapper-title
               h3 About us
 
             ul.footer__link-sublist.no-js
@@ -522,14 +535,15 @@ html(lang="en")
                   a(href=item.link)= item.title
 
           li.footer__link-item.footer__link-item--touch
-            h3 Get in touch
+            .footer__wrapper-title
+              h3 Get in touch
 
             ul.footer__link-sublist.no-js
 
               li.footer__link-subitem
                 a(href="#") Contact us
 
-              li.footer__link-subitem
+              li.footer__link-subitem.footer__link-subitem--social
                 ul.footer__social-list
 
                   li.footer___social-item
@@ -553,8 +567,5 @@ html(lang="en")
               li.footer__link-subitem
                 a(href="#") Professional area
 
-
-
-        
-
-    script(src='js/all.js')
+    //- Scripts
+    script(src='js/all.min.js')

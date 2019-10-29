@@ -108,11 +108,10 @@
 .footer__link-sublist {
   @media (max-width: $media-tb) {
     width: 100%;
+    max-height: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    max-height: 0;
     transition: max-height 0.5s;
     overflow: hidden;
   }
@@ -231,6 +230,12 @@
   }
 }
 
+.footer__link-item--touch .footer__link-sublist {
+  @media (max-width: $media-tb) {
+    max-height: 49px;
+  }
+}
+
 .footer__link-list li:last-child {
   margin-right: 0;
 }
@@ -241,9 +246,29 @@
   }
 }
 
+.footer__wrapper-title {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-bottom: 16px;
+
+  @media (max-width: $media-tb) {
+    justify-content: center;
+    border-bottom: 1px solid rgba(#3d3d3d, 0.05);
+    cursor: pointer;
+  }
+}
+
+.footer__link-item:last-child .footer__wrapper-title {
+  @media (max-width: $media-tb) {
+    border-bottom: none;
+  }
+}
+
 .footer__link-item h3 {
   position: relative;
-  padding-bottom: 16px;
+  display: inline-block;
+  width: auto;
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
@@ -253,29 +278,41 @@
     font-size: 14px;
     line-height: 19px;
     text-align: center;
-    border-bottom: 1px solid rgba(#3d3d3d, 0.05);
-    cursor: pointer;
   }
 
   &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 14px;
-    height: 9px;
-    background-image: url("../img/svg/arrow-footer-icon.svg");
-  }
-}
+    display: none;
 
-.footer__link-item:last-child h3 {
-  @media (max-width: $media-tb) {
-    border-bottom: none;
+    @media (max-width: $media-tb) {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 7px;
+      right: -32px;
+      width: 14px;
+      height: 9px;
+      background-image: url("../img/svg/arrow-footer-icon.svg");
+      transition: top 0.3s, transform 0.3s;
+    }
   }
 }
 
 .footer__link-subitem {
   margin-bottom: 17px;
+
+  &--social {
+    @media (max-width: $media-tb) {
+      order: -1;
+    }
+  }
+}
+
+.footer__link-sublist .footer__link-subitem {
+  &:first-child {
+    @media (max-width: $media-tb) {
+      padding-top: 10px;
+    }
+  }
 }
 
 .footer__link-item--about .footer__link-subitem {
@@ -317,6 +354,11 @@
   flex-wrap: wrap;
   margin-top: 23px;
   margin-bottom: 21px;
+
+  @media (max-width: $media-tb) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .footer___social-item {
@@ -342,9 +384,19 @@
   @include visually-hidden;
 }
 
+// for accordion
 // no-js
 .footer .no-js {
   @media (max-width: $media-tb) {
     max-height: unset;
+  }
+}
+
+.accordion-open h3 {
+  @media (max-width: $media-tb) {
+    &::before {
+      top: 5px;
+      transform: rotate(-90deg);
+    }
   }
 }

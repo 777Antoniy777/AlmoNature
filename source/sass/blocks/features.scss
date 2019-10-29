@@ -173,10 +173,10 @@
     height: 279px;
     margin-bottom: -25px;
     background-image: url("../img/features-image-bg.png"),
-                      none,
+                      url("../img/table-bg.png"),
                       url("../img/feature-cloud-icon.png");
-    background-size: cover, 0 0, 54% 38%;
-    background-position: 45% 41px, center, 99% 19%;
+    background-size: auto 279px, 100% 78px, 173px 108px;
+    background-position: 45% 41px, center 85%, 99% 19%;
   }
 }
 

@@ -114,9 +114,10 @@
   }
 
   @media (max-width: $media-tb) {
-    left: 4px;
+    left: 43%;
     width: 243px;
     height: 272px;
+    transform: translate(-50%);
   }
 }
 
