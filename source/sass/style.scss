@@ -3,6 +3,10 @@
 @import "normalize.scss";
 @import "global.scss";
 @import "fonts.scss";
+// 
+@import "_sprite.scss";
+@import "_sprite_template.scss";
+// 
 @import "blocks/text-content.scss";
 @import "blocks/header.scss";
 @import "blocks/introduction.scss";

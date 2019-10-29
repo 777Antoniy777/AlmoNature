@@ -13,6 +13,10 @@
   }
 }
 
+.header__wrapper--first {
+  background-color: #f7f7f7;
+}
+
 .header__wrapper .site-wrapper {
   display: flex;
   align-items: center;
@@ -31,7 +35,7 @@
 .header__wrapper--first .site-wrapper {
   justify-content: space-between;
   min-height: 34px;
-  background-color: #f7f7f7;
+  background-color: transparent;
 
   @media (max-width: $media-dt) {
     display: none;

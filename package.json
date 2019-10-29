@@ -23,7 +23,12 @@
     "gulp-webp": "^3.0.0",
     "postcss-object-fit-images": "^1.1.2",
     "stylelint": "9.6.x",
-    "stylelint-config-htmlacademy": "0.1.x"
+    "stylelint-config-htmlacademy": "0.1.x",
+
+    "gulp-svgmin": "^2.2.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-cheerio": "^1.0.0"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -31,12 +36,7 @@
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
     "start": "gulp start",
-    "images": "gulp images",
-    "webp": "gulp webp",
-    "html": "gulp html",
-    "js": "gulp js",
-    "copy": "gulp copy",
-    "clean": "gulp clean"
+    "imagemin": "gulp imagemin"
   },
   "browserslist": [
     "last 2 versions",

@@ -1,3 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 240" preserveAspectRatio="none" fill="none" style="transform: scale(-1, 1);">
-  <path d="M12.387 79.3385C44.7698 -3.49999 130.303 0.88488 133.27 1.00005C233.277 4.88376 286.853 72.6866 267.27 129C245.66 191.139 214.411 244.119 101.84 239.68C18.92 236.411 -22.4335 168.413 12.387 79.3385Z" fill="white"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272 240" preserveAspectRatio="none" fill="none" transform="scale(-1 1)"><path d="M12.387 79.338C44.77-3.5 130.303.885 133.27 1c100.007 3.884 153.583 71.687 134 128-21.61 62.139-52.859 115.119-165.43 110.68-82.92-3.269-124.273-71.267-89.453-160.341z" fill="#fff"/></svg>

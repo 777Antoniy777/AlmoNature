@@ -17,6 +17,19 @@ html(lang="en")
       // Picture element HTML5 shiv
       document.createElement("picture")
 
+  //- mixin for svg
+  mixin svg-icon(name, w, h, fill)
+    - var size = size || 24;
+    - var sprite = "img/sprite/sprite.svg"
+    
+    svg(viewBox='0 0 ' + w + ' ' + h width=w height=h fill=fill)
+      use(xlink:href= sprite + '#' + name)
+
+  mixin icon(name, mod, fill)
+    - mod = mod || ''
+    svg(class="icon icon-" + name + ' ' + mod)
+      use(xlink:href="img/sprite/sprite.svg#" + name)
+
   -
     const headerCat = [
       {
@@ -453,15 +466,6 @@ html(lang="en")
               a(href="#")
                 h3 Size of the kibble Large (L)
                 img(src="img/product-4.png" width="289" height="364" loading="lazy" alt="Size of the kibble Large (L)")
-            li.products__item
-              a(href="#")
-                h3 Size of the kibble Medium (M)
-                img(src="img/product-3.png" width="289" height="364" loading="lazy" alt="Size of the kibble Medium (M)")
-
-            li.products__item
-              a(href="#")
-                h3 Size of the kibble Large (L)
-                img(src="img/product-4.png" width="289" height="364" loading="lazy" alt="Size of the kibble Large (L)")
 
           p
             | And above all - it is convenient to buy and store, 
@@ -549,8 +553,10 @@ html(lang="en")
                   li.footer___social-item
                     a(href="#")
                       span Facebook
-                      svg(width="44" height="44")
-                        use(xlink:href="img/sprite/sprite.svg#footer-fb")
+                      //- +svg-icon('footer-fb', 60, 70, 'red')
+                      +icon('footer-fb', 'red_mod')
+                      //- svg(width="44" height="44")
+                      //-   use(xlink:href="img/sprite/sprite.svg#footer-fb")
 
                   li.footer___social-item
                     a(href="#")
