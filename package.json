@@ -18,17 +18,12 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "4.0.x",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-svgstore": "^7.0.1",
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^3.0.0",
     "postcss-object-fit-images": "^1.1.2",
     "stylelint": "9.6.x",
-    "stylelint-config-htmlacademy": "0.1.x",
-
-    "gulp-svgmin": "^2.2.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-svg-sprite": "^1.5.0",
-    "gulp-cheerio": "^1.0.0"
+    "stylelint-config-htmlacademy": "0.1.x"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",

@@ -18,16 +18,9 @@ html(lang="en")
       document.createElement("picture")
 
   //- mixin for svg
-  mixin svg-icon(name, w, h, fill)
-    - var size = size || 24;
-    - var sprite = "img/sprite/sprite.svg"
-    
-    svg(viewBox='0 0 ' + w + ' ' + h width=w height=h fill=fill)
-      use(xlink:href= sprite + '#' + name)
-
-  mixin icon(name, mod, fill)
+  mixin icon(name, mod)
     - mod = mod || ''
-    svg(class="icon icon-" + name + ' ' + mod)
+    svg(class="icon icon--" + name)
       use(xlink:href="img/sprite/sprite.svg#" + name)
 
   -
@@ -553,10 +546,8 @@ html(lang="en")
                   li.footer___social-item
                     a(href="#")
                       span Facebook
-                      //- +svg-icon('footer-fb', 60, 70, 'red')
-                      +icon('footer-fb', 'red_mod')
-                      //- svg(width="44" height="44")
-                      //-   use(xlink:href="img/sprite/sprite.svg#footer-fb")
+                      svg(width="44" height="44")
+                        use(xlink:href="img/sprite/sprite.svg#footer-fb")
 
                   li.footer___social-item
                     a(href="#")
