@@ -18,6 +18,7 @@ var sourcemaps = require(`gulp-sourcemaps`);
 var del = require("del");
 var server = require("browser-sync").create();
 
+// css
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
     .pipe(plumber())
@@ -29,22 +30,25 @@ gulp.task("css", function () {
     ]))
     .pipe(gulp.dest("build/css"))
     .pipe(cssmin())
-    .pipe(sourcemaps.write())
     .pipe(rename("style.min.css"))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
 
 gulp.task("js", function () {
   return gulp.src("source/js/*.js")
+    .pipe(sourcemaps.init())
     .pipe(jsconcat("all.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(jsuglify())
     .pipe(rename("all.min.js"))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest("build/js"))
     .pipe(server.stream());
 });
 
+// img (jpg, png, svg, webp)
 gulp.task("images", function() {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(image({
@@ -79,9 +83,10 @@ gulp.task('sprite', function () {
         }
 			}
 		}))
-		.pipe(gulp.dest('source/img/sprite/'));
+		.pipe(gulp.dest('build/img/sprite/'));
 });
 
+// html
 gulp.task("html", function() {
   return gulp.src("source/*.pug")
     .pipe(pug({}))
@@ -97,8 +102,9 @@ gulp.task("server", function() {
     ui: false
   });
 
-  gulp.watch("source/img/**/*.{png,jpg,webp}", gulp.series("imagemin", "copy")).on("change", server.reload);
-  gulp.watch("source/img/**/*.{svg}", gulp.series("sprite", "copy")).on("change", server.reload);
+  // watchers
+  gulp.watch("source/img/**/*.{png,jpg,webp}", gulp.series("copy")).on("change", server.reload);
+  gulp.watch("source/img/icons-sprite/*.svg", gulp.series("sprite", "reload"));
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
   gulp.watch("source/js/*.js", gulp.series("js"));
   gulp.watch("source/*.pug", gulp.series("html", "reload"));
@@ -112,7 +118,8 @@ gulp.task("reload", function(done) {
 gulp.task("copy", function() {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
-    "source/img/**/*.{png,jpg,svg,webp}"
+    "source/img/**/*.{png,jpg,webp}",
+    "source/img/svg/*.svg"
   ], {
     base: "source"
   })
