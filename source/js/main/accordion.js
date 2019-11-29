@@ -1,10 +1,10 @@
 'use strict';
-(function () {
+(function() {
   var footerList = document.querySelector('.footer__link-list');
   var footerSublist = footerList.querySelectorAll('.footer__link-sublist');
   var footerSublistArray = Array.from(footerSublist);
 
-  var mediaQueryList = window.matchMedia("(max-width: 767px)");
+  var mediaQueryList = window.matchMedia('(max-width: 767px)');
   function handleMediaChange(evt) {
     if (evt.matches) {
       footerSublistArray.map(function(elem) {
@@ -27,18 +27,15 @@
     var sublist = sublistTitle.nextElementSibling;
 
     if (window.matchMedia("(max-width: 767px)").matches) {
-
       if (sublistTitle) {
         addClassToList(sublistTitle, sublist);
       }
-
     }
 
-    return;
+    return false;
   }
 
   function addClassToList(title, list) {
-
     if (list.style.maxHeight) {
       list.style.maxHeight = null;
       title.classList.remove('accordion-open');
@@ -46,6 +43,5 @@
       list.style.maxHeight = list.scrollHeight + 'px';
       title.classList.add('accordion-open');
     }
-
   }
 })();
