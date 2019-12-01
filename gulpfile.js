@@ -43,8 +43,8 @@ gulp.task("js", function () {
     .pipe(sourcemaps.init())
     .pipe(jsconcat("all.js"))
     .pipe(babel({
-			  presets: ['@babel/preset-env']
-		  }))
+      presets: ['@babel/preset-env']
+    }))
     .pipe(gulp.dest("build/js"))
     .pipe(jsuglify())
     .pipe(rename("all.min.js"))
