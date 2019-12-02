@@ -1,5 +1,4 @@
 build/
 gulpfile.js
-# gulpfile.babel.js
 package.json
 package-lock.json
