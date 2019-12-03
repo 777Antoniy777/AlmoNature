@@ -9,6 +9,7 @@ var autoprefixer = require("autoprefixer");
 var cssmin = require("gulp-csso");
 var rename = require("gulp-rename");
 var image = require("gulp-image");
+var resize = require("gulp-image-resize");
 var webp = require("gulp-webp");
 var objectfit = require(`postcss-object-fit-images`);
 var jsconcat = require('gulp-concat');
@@ -55,7 +56,7 @@ gulp.task("js", function () {
 
 // img (jpg, png, svg, webp)
 gulp.task("images", function() {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
+  return gulp.src("source/img/*.{png,jpg,svg}")
     .pipe(image({
       pngquant: true,
       optipng: false,
@@ -72,13 +73,41 @@ gulp.task("images", function() {
 });
 
 gulp.task("webp", function() {
-  return gulp.src("source/img/**/*.{png,jpg}")
+  return gulp.src("source/img/*.{png,jpg}")
     .pipe(webp({
       quality: 80
     }))
     .pipe(gulp.dest("source/img"));
 });
 
+// install GraphicsMagick or ImageMagick before usage (https://www.npmjs.com/package/gulp-gm) !!! 
+gulp.task("resizeimages", function() {
+  return gulp.src('source/img/*.{png,jpg}')
+    .pipe(resize({
+      percentage: 10,
+      cover: true,
+    }))
+    .pipe(gulp.dest('source/img/placeholders'));
+});
+
+gulp.task("tinyimages", function() {
+  return gulp.src('source/img/placeholders/*.{png,jpg}')
+    .pipe(image({
+      pngquant: ['--speed=11', '--force', 256, '--quality', 1, '--posterize', 1],
+      optipng: false,
+      zopflipng: false,
+      jpegRecompress: false,
+      mozjpeg: ['-quality', 5, '-smooth', 100],
+      guetzli: false,
+      gifsicle: false,
+      svgo: false,
+      concurrent: 10,
+      quiet: true
+    }))
+    .pipe(gulp.dest('source/img/placeholders'));
+});
+
+// sprite
 gulp.task('sprite', function () {
   return gulp.src('source/img/icons-sprite/*.svg')
 		.pipe(svgsprite({
@@ -136,8 +165,13 @@ gulp.task("clean", function() {
 });
 
 gulp.task("imagemin", gulp.series(
-  "images",
   "webp",
+  "images"
+));
+
+gulp.task('phimage', gulp.series(
+  'resizeimages', 
+  'tinyimages'
 ));
 
 gulp.task("build", gulp.series(

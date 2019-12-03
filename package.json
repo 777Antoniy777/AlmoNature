@@ -31,6 +31,8 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^3.0.0",
+    "gulp-gm": "0.0.9",
+    "gulp-image-resize": "^0.13.1",
     "postcss-object-fit-images": "^1.1.2",
     "stylelint": "9.6.x",
     "stylelint-config-htmlacademy": "0.1.x"
@@ -42,7 +44,8 @@
     "test": "npm run editorconfig && npm run stylelint && npm run eslint",
     "build": "gulp build",
     "start": "gulp start",
-    "imagemin": "gulp imagemin"
+    "imagemin": "gulp imagemin",
+    "placeholderimg": "gulp phimage"
   },
   "browserslist": [
     "last 2 versions",
