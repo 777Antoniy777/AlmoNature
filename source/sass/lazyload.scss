@@ -1,10 +1,10 @@
-.b-lazy {
+img[class~="b-lazy"] {
   transform: scale(1.05);
   filter: blur(5px);
   transition: all 500ms;
 }
 
-.b-loaded {
+img[class~="b-loaded"] {
   transform: scale(1);
   filter: none;
 }

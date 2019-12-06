@@ -1,3 +1,3 @@
 var bLazy = new Blazy({
-  selector: '.b-lazy',
+  selector: 'img[class~="b-lazy"]',
 });
