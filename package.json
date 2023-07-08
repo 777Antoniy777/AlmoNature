@@ -34,7 +34,7 @@
     "gulp-gm": "0.0.9",
     "gulp-image-resize": "^0.13.1",
     "postcss-object-fit-images": "^1.1.2",
-    "stylelint": "9.6.x",
+    "stylelint": "15.10.x",
     "stylelint-config-htmlacademy": "0.1.x"
   },
   "scripts": {
